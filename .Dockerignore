@@ -1,0 +1,6 @@
+images/
+.gitattributes
+.python-version
+**__pycache
+LICENSE
+README.md
