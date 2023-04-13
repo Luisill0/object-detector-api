@@ -1,3 +1,5 @@
 opencv-python
 fastapi
 uvicorn
+requests
+alive_progress

@@ -2,5 +2,7 @@ images/
 .gitattributes
 .python-version
 **__pycache
+**.weights
+.git/*
 LICENSE
 README.md
