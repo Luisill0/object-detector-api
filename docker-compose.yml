@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+    app:
+        container_name: object-detector-api
+        image: object-detector-api
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: base
+        ports:
+            - "3100:3100"

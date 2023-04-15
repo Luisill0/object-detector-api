@@ -1,12 +1,10 @@
-FROM python:slim
+FROM python:slim as base
 RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6 -y
+RUN apt-get install ffmpeg wget -y
 WORKDIR /app
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install --upgrade -r /app/requirements.txt
-COPY ./api/models /app/api/models
-COPY ./download_models.py /app/download_models.py
-RUN python3 /app/download_models.py
-COPY . /app
+RUN wget https://github.com/AlexeyAB/darknet/releases/download/yolov4/yolov7.weights
+COPY . .
+RUN mv yolov7.weights /app/api/models/
 CMD ["uvicorn", "api.app:app", "--host", "0.0.0.0", "--port", "3100"]
-EXPOSE 3100
