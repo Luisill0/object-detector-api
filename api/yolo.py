@@ -17,11 +17,11 @@ class YOLOSSD:
     classes: List[str]
 
     def __init__(self) -> None:
-        net = cv2.dnn.readNetFromDarknet(f'{modelDir}/yolov4.cfg', f'{modelDir}/yolov4.weights')
+        net = cv2.dnn.readNetFromDarknet(f'{modelDir}/yolov7.cfg', f'{modelDir}/yolov7.weights')
 
         self.detectionModel = cv2.dnn_DetectionModel(net)
         self.detectionModel.setInputParams(
-            scale=1/255, size=(416,416), swapRB=True
+            scale=1/255, size=(640,640), swapRB=True
         )
 
         with open(f'{modelDir}/coco.names', 'r') as cocoNamesFile:
