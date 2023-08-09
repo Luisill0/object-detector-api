@@ -2,7 +2,29 @@
 
 API for object detection using YOLOSSD
 
-## How to run locally
+## Running Locally
+
+### * Using Docker image
+
+1. Pull the image from dockerhub or build it yourself
+
+* **Dockerhub**
+    ```bash
+    docker pull luisill0/obj-detector-api:latest
+    ```
+
+* **Build in the terminal**
+    ```bash
+    docker build --rm -t [repo]:[tag] .
+    ```
+
+2. Run the image
+    ```bash
+    docker run --rm -p 3100:3100 luisill0/obj-detector-api:latest
+    ```
+
+
+### * Running the python script
 
 0. (Optional) Create a virtual environment
 
@@ -18,6 +40,8 @@ API for object detection using YOLOSSD
     ```
 
 3. Navigate to http://localhost:3100/docs in your browser to view the UI
+
+\* You might need to install additional packages like `ffmpeg` depending on your machine
 
 ## How to use
 Once you have the API running locally:
