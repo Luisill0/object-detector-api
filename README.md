@@ -17,7 +17,7 @@ API for object detection using YOLOSSD
     uvicorn api.app:app
     ```
 
-3. Navigate to http://localhost:8000/docs in your browser to view the UI
+3. Navigate to http://localhost:3100/docs in your browser to view the UI
 
 ## How to use
 Once you have the API running locally:
