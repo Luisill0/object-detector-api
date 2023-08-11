@@ -1,6 +1,9 @@
 import os
 from pydantic import BaseModel
+
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
 from api.yolo import YOLOSSD
 from api.image_utils import annotateImage, decodeB64Image, encodeImageB64
 
@@ -19,7 +22,18 @@ app = FastAPI(
     openapi_prefix=prefix
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 objectDetector = YOLOSSD()
+
+@app.get('/')
+async def status():
+    return {'status': 'OK'}
 
 @app.post('/upload/detect')
 async def detect(request: APIRequest) -> APIResponse:
