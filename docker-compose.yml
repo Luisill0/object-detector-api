@@ -10,4 +10,4 @@ services:
             dockerfile: Dockerfile
             target: base
         ports:
-            - "3100:3100"
+            - $PORT:3100

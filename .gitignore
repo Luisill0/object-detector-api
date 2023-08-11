@@ -7,3 +7,6 @@
 
 # Pyenv
 .python-version
+
+# env
+.env
