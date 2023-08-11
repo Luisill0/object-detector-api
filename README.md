@@ -1,5 +1,7 @@
 # Object Detector API
 
+Check out a live demo [here](https://projects.object-detector.luiz.lat)!
+
 API for object detection using YOLOSSD
 
 ## Running Locally
