@@ -1,0 +1,9 @@
+# Model weights
+*.cfg
+*.weights
+
+# Cache
+**__pycache__**
+
+# Pyenv
+.python-version
